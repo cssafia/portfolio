@@ -1,0 +1,79 @@
+
+## 1. Signature system: connected nodes / constellation
+
+Your avatar sits fixed at the center of the hero as the hub. Around it, small circular nodes represent your core tech stack (React, Flutter, JS, CSS, HTML, Dart, etc.), each connected back to the center by a thin line — visually saying "all these skills connect back to me." This is your one signature visual element, and it gets echoed (in smaller, quieter forms) throughout the rest of the site so the whole design feels like one connected system rather than a single flashy hero with plain sections after it.
+
+## 2. Hero section — load sequence (revised, no photo mask)
+
+Since the photo mask/center-out reveal is out, here's the corrected sequence:
+
+1. **Text enters first, staggered line by line**: "Hello!" fades/slides up, then a short beat, then "I'm Safia" slides up, then a beat, then the subtitle line, then the CTA button — each with a small delay so the eye is guided downward naturally toward the button.
+2. **Photo/avatar fades or scales in** at the center (simple opacity + slight scale-up from ~0.9 to 1, no clipping/masking) — clean and quick, not a big production moment on its own.
+3. **Lines draw outward** from the center to each node position, one at a time or in a quick stagger (each line "drawing" itself using a stroke animation).
+4. **Nodes pop in** at the end of each line, right as its line finishes drawing — small scale/opacity pop, staggered so it doesn't feel like everything appears at once.
+5. **Settle into the ambient baseline state** (below) once everything has landed.
+
+This keeps one clear front-to-back choreography (text → photo → lines → nodes) without the mask effect, and it's simpler to implement.
+
+## 3. Hero — ongoing ambient state (after load)
+
+Once the constellation has fully drawn in, it doesn't go static — it keeps three layers of subtle motion running:
+
+- **Pulse**: each node very slowly scales up and back down (e.g. 1 → 1.03 → 1) on a multi-second cycle, staggered per node so they're never pulsing in sync — reads as "breathing," not distracting.
+- **Drift**: each node also gets a tiny independent floating movement (a few pixels, slow, different timing per node) — like it's gently suspended, echoing the floating hexagons from your original reference image.
+- **Traveling particle (your standout creative signature)**: a small dot periodically travels along one line at a time, from the center out to its node, then fades — like a signal or pulse of data being sent outward. This happens slowly and one line at a time (not all lines at once), so it reads as a deliberate, almost meditative detail rather than clutter.
+
+## 4. Hero — interactive payoff (on hover)
+
+Hovering a node:
+- Highlights/brightens its connecting line back to the center.
+- Scales the node up slightly.
+- Reveals a small label with the skill name (e.g., "React") near the node.
+
+This turns the constellation from something people just watch into something they can explore, which is what pushes it past what the orbit system offers on its own.
+
+## 5. How the signature echoes into other sections
+
+**About Me**
+- Your avatar appears again as a node/hub, this time connected to a short sequential set of nodes representing a timeline: Frontend → Mobile (Flutter) → Backend → Currently — since a bio has a natural order, unlike the hero's radiating skill set.
+- Alternative/addition: a thin line visually "continues" from the hero's constellation down into this section as the user scrolls, reinforcing that it's still about the same person.
+
+**Projects**
+- Each project card carries a small node-styled dot (instead of a plain colored tag or icon) in its corner.
+- Tech tags under each project (e.g. "React," "Flutter") are styled as small connected nodes/pills rather than plain text badges, tying back to the hero's tag system.
+- Optional: a faint dotted/node-point pattern in the section background (very subtle, not competing with the cards).
+
+**Testimonials**
+- The quotation mark icon on each testimonial card is restyled as a small node/dot rather than a generic quote glyph.
+- Optional: a thin connecting line visually links from the last project card into the testimonials section, continuing the "thread."
+- Cards themselves stay otherwise clean and calm — this section isn't meant to carry heavy animation, just the small consistent visual language.
+
+**Rule across all of this**: the hero gets the full, elaborate treatment (your one real "wow" moment, full animation budget). Every other section only gets small, quiet references to the same shape language — a dot here, a line there — so the whole page feels unified without repeating expensive animation everywhere.
+
+## 6. Color system
+
+**Core signature color: soft lavender-purple**
+- Sits between blue (which you noted feels generic/overused for node-network UIs) and pink (too strongly feminine on its own) — reads as confident and approachable, professional but not cold.
+- Used for: nodes, connecting lines, CTA button, primary headings/accents.
+
+**Secondary accent: warm rose-purple**
+- Used sparingly — hover highlights, the traveling particle, small accent touches — this is your subtle feminine signature layer, not a whole section's color.
+
+**Light mode**
+- Background: warm off-white/cream with a faint purple undertone (not stark white).
+- Text: dark navy/charcoal rather than pure black, for warmth.
+- Nodes: pale lavender fill, mid-purple border/lines, dark purple icon color.
+
+**Dark mode**
+- Background: deep purple-tinted charcoal (not pure black) — keeps the same color family as light mode instead of feeling like a different site.
+- Nodes/lines: brightened lavender so they glow softly against the dark background.
+- Rose-purple accent stays consistent as the "pop" highlight in both modes.
+
+## 7. Avatar
+
+- **Illustrated/generated avatar**, not a real photo — lets the colors (hijab, outfit, background tones) be harmonized exactly to your lavender/purple palette, and keeps visual consistency with the stylized node system (a realistic photo would visually clash with the abstract constellation around it).
+- **Half-body, not face-only** — seated or relaxed pose, ideally with a laptop, so the pose carries life and reads clearly as "developer," matching the energy of your reference image.
+- **Hijab styled naturally**, draped in solid or subtly patterned tones pulled from your palette so it feels intentional and part of the design, not an afterthought.
+- **Flat/semi-flat illustration style** — not photorealistic — so it visually belongs next to the clean, geometric node shapes rather than looking like a pasted-in photo.
+
+Want me to update the architecture doc file now with this finalized version, or write the AI-image-generation prompt for the avatar next?
