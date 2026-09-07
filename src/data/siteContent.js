@@ -52,7 +52,7 @@ export const contactLinks = [
     label: "Email",
     Icon: Mail,
     color: "var(--node-icon)",
-    href: "louanssisafia6@gmail.com",
+    href: "mailto:louanssisafia6@gmail.com",
   },
 ];
 
