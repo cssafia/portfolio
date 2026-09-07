@@ -37,7 +37,7 @@ import zeroWaste2 from "../assets/projects/zerowaste_2.jpg";
 
 import post1 from "../assets/projects/algerpost_1.png";
 import post2 from "../assets/projects/algerpost_2.png";
-import post3 from "../assets/projects/algerpost_3.png";
+import post3 from "../assets/projects/algerpost_4.png";
 
 import event1 from "../assets/projects/eventsphere_1.png";
 import event2 from "../assets/projects/eventsphere_2.png";
